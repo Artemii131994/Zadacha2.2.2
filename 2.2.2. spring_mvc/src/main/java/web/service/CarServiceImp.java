@@ -1,4 +1,4 @@
-package web.dao;
+package web.service;
 
 import org.springframework.stereotype.Component;
 import web.model.Car;
@@ -6,10 +6,10 @@ import web.model.Car;
 import java.util.ArrayList;
 import java.util.List;
 @Component
-public class CarDAO {
+public class CarServiceImp implements CarService{
     public static List<Car> car;
 
-    public CarDAO() {
+    public CarServiceImp() {
         car = new ArrayList<>();
         car.add(new Car(1,"Kalina","LADA"));
         car.add(new Car(2,"Teana","NISSAN"));
@@ -18,7 +18,7 @@ public class CarDAO {
         car.add(new Car(5,"Lancer","MITSUBISHI"));
 
     }
-    public static List<Car> getcar(int count) {
+    public List<Car> getcar(int count) {
 
         List<Car> listcar = new ArrayList<>();
         for (int i = 0; i < count; i++) {
